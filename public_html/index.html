@@ -14,6 +14,10 @@
     />
     <!-- Compiled and minified CSS -->
     <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
@@ -56,11 +60,76 @@
           <br />
           <div class="col s12 center-align">
             <a
-              class="waves-effect waves-light btn click-me-button"
+              class="waves-effect waves-light btn click-me-button modal-trigger"
               id="clickMeButton"
-              ><i class="material-icons left">Click Me</i></a
+              data-target="modal1"
+              ><i class="material-icons left">auto_fix_high</i>Click Me</a
             >
           </div>
+        </div>
+        <div class="row">
+          <div class="col s4 center-align">
+            <div class="card">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="image/Bombay.jpg" alt="pic1" />
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"
+                  >Kitten<i class="material-icons right">more_vert</i></span
+                >
+                <p><a href="https://www.canva.com/">About this kitten</a></p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"
+                  >Kitten<i class="material-icons right">close</i></span
+                >
+                <p class="card-text">
+                  Hello There! I just wanted to say HI to you guys. See ya!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row" id="card-section"></div>
+        </div>
+      </div>
+      <div id="modal1" class="modal modal-fixed-footer">
+        <div class="row modal-content">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <input
+                  placeholder="Placeholder"
+                  id="first_name"
+                  type="text"
+                  class="validate"
+                />
+                <label for="first_name">First Name</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="last_name" type="text" class="validate" />
+                <label for="last_name">Last Name</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="password" type="password" class="validate" />
+                <label for="password">Password</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email" type="email" class="validate" />
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12 center-align">
+                <a class="waves-effect waves-light btn" id="formSubmit"
+                  >submit</a
+                >
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </main>
