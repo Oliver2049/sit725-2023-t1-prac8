@@ -1,0 +1,19 @@
+{
+  "name": "sit725-2023-t1-prac3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oliver2049/sit725-2023-t1-prac3.git"
+  },
+  "author": "Oliver",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Oliver2049/sit725-2023-t1-prac3/issues"
+  },
+  "homepage": "https://github.com/Oliver2049/sit725-2023-t1-prac3#readme"
+}
