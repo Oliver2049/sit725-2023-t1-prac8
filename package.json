@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Oliver2049/sit725-2023-t1-prac4/issues"
   },
-  "homepage": "https://github.com/Oliver2049/sit725-2023-t1-prac4#readme"
+  "homepage": "https://github.com/Oliver2049/sit725-2023-t1-prac4#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongodb": "^6.5.0"
+  }
 }
