@@ -1,5 +1,5 @@
 {
-  "name": "sit725-2023-t1-prac3",
+  "name": "sit725-2023-t1-prac4",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Oliver2049/sit725-2023-t1-prac3.git"
+    "url": "git+https://github.com/Oliver2049/sit725-2023-t1-prac4.git"
   },
   "author": "Oliver",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Oliver2049/sit725-2023-t1-prac3/issues"
+    "url": "https://github.com/Oliver2049/sit725-2023-t1-prac4/issues"
   },
-  "homepage": "https://github.com/Oliver2049/sit725-2023-t1-prac3#readme"
+  "homepage": "https://github.com/Oliver2049/sit725-2023-t1-prac4#readme"
 }

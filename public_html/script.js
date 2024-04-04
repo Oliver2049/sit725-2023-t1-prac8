@@ -47,6 +47,13 @@ const addCards = (items) => {
     $("#card-section").append(itemToAppend);
   });
 };
+const getcards = () => {
+  $.get("api/cards", (respocnes) => {
+    if (Response.statusCode == 200) {
+      addCards(response.data);
+    }
+  });
+};
 $(document).ready(function () {
   $(".materialboxed").materialbox();
   $("#formSubmit").click(() => {
