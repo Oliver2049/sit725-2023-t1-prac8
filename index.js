@@ -7,7 +7,7 @@ let collection;
 app.use(express.static(__dirname + "/public_html"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-// Create a MOngoClient with a MongoClientsOptions object to set the Satable API version
+
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -17,7 +17,6 @@ const client = new MongoClient(uri, {
 });
 async function runDBConnection() {
   try {
-    //Connect the client to the server (optional starting in v4.7)
     await client.connect();
     collection = client.db().collection("Cat");
     console.log(collection);
@@ -25,32 +24,51 @@ async function runDBConnection() {
     console.error(ex);
   }
 }
+
+async function postCard(card) {
+  try {
+    const result = await collection.insertOne(card);
+    console.log(`Card inserted with the _id: ${result.insertedId}`);
+  } catch (ex) {
+    console.error(ex);
+  }
+}
+
+async function getAllCats() {
+  try {
+    const cards = await collection.find().toArray();
+    console.log(`Fetched ${cards.length} cards from the collection`);
+    return cards;
+  } catch (ex) {
+    console.error(ex);
+  }
+}
 runDBConnection();
-const cardList = [
-  {
-    title: "Kitten 2",
-    image: "image/Birman.jpg",
-    link: "About Kitten 2",
-    desciption: "Demo desciption about kitten 2",
-  },
-  {
-    title: "Kitten 3",
-    image: "image/Bengal.jpg",
-    link: "About Kitten 3",
-    desciption: "Demo desciption about kitten 3",
-  },
-];
+
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/public_html/index.html");
+  res.render("index.html");
 });
 app.get("/api/cards", async (req, res) => {
   try {
-    const cards = await collection.find().toArray();
-    res.json({ statusCode: 200, data: cards, message: "Success" });
+    const result = await getAllCats();
+    res.json({
+      statusCode: 200,
+      data: result,
+      message: "get all cards success",
+    });
   } catch (err) {
     res.status(500).json({ error: err.toString() });
   }
 });
+app.post("/api/cards", async (req, res) => {
+  try {
+    await postCard(req.body);
+    res.json({ statusCode: 200, message: "Card inserted successfully" });
+  } catch (err) {
+    res.status(500).json({ error: err.toString() });
+  }
+});
+
 var port = process.env.port || 3000;
 app.listen(port, () => {
   console.log("App listening to: " + port);
