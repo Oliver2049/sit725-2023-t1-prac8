@@ -50,9 +50,7 @@ const addCards = (items) => {
 };
 const getcards = () => {
   $.get("api/cards", (response) => {
-    if (response.statusCode == 200) {
-      addCards(response.data);
-    }
+    addCards(response.data);
   });
 };
 $(document).ready(function () {

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "mocha --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,13 @@
   },
   "homepage": "https://github.com/Oliver2049/sit725-2023-t1-prac4#readme",
   "dependencies": {
+    "chai": "^4.4.1",
+    "chai-http": "^4.4.0",
     "express": "^4.19.2",
-    "mongodb": "^6.5.0"
+    "mocha": "^10.4.0",
+    "mongodb": "^6.5.0",
+    "request": "^2.88.2",
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5"
   }
 }
