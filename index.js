@@ -13,24 +13,16 @@ app.use("/", router);
 catModel.runDBConnection();
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log("App listening on port: " + port);
+http.listen(3000, () => {
+  console.log("express server started");
 });
 
 io.on("connection", (socket) => {
   console.log("a user connected");
-
   socket.on("disconnect", () => {
     console.log("user disconnected");
   });
   setInterval(() => {
-    let cat = {
-      title: "Kitten " + parseInt(Math.random() * 10),
-      image: "image/Birman.jpg",
-      link: "About Kitten " + parseInt(Math.random() * 10),
-      description:
-        "Demo description about kitten " + parseInt(Math.random() * 10),
-    };
-    socket.emit("cat", cat);
+    socket.emit("number", parseInt(Math.random() * 10));
   }, 1000);
 });

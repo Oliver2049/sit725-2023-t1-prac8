@@ -15,6 +15,7 @@ async function postCard(card) {
   try {
     const result = await collection.insertOne(card);
     console.log(`Card inserted with the _id: ${result.insertedId}`);
+    console.log("Cat posted");
   } catch (ex) {
     console.error(ex);
   }

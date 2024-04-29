@@ -1,3 +1,7 @@
+let socket = io();
+socket.on("number", (msg) => {
+  console.log("Random Number: " + msg);
+});
 const cardList = [
   {
     title: "Kitten 2",
